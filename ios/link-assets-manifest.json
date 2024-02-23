@@ -1,0 +1,21 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/AbrilFatface-Regular.ttf",
+      "sha1": "545553bf8733c6edc2846ba1b420f19e4a6ff2de"
+    },
+    {
+      "path": "assets/fonts/Jura-Light.ttf",
+      "sha1": "6846c814b1fcba524d4178ba5e85ccce8a51cd12"
+    },
+    {
+      "path": "assets/fonts/Jura-Regular.ttf",
+      "sha1": "026e577eaee12a22045ea31da94d083479ec959c"
+    },
+    {
+      "path": "assets/fonts/JustMeAgainDownHere-Regular.ttf",
+      "sha1": "5818305f447ce1a73efd6259820e16d31d540ff1"
+    }
+  ]
+}

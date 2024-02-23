@@ -14,6 +14,10 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-QuickScan-QuickScanTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-QuickScan-QuickScanTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		B83E4085986B47AABFC24F0B /* JustMeAgainDownHere-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D154AD8E66CC431BA8400660 /* JustMeAgainDownHere-Regular.ttf */; };
+		51FE80AB5B72446E9B06F35C /* AbrilFatface-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8AA0B0EDABD54B9F82734FAC /* AbrilFatface-Regular.ttf */; };
+		0B48076B9076443592083997 /* Jura-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D2424AB97794D1690B2BFB7 /* Jura-Light.ttf */; };
+		2C4EAC6DE2BE4BFC951F4498 /* Jura-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD6BC264EB174E2F89A386E7 /* Jura-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = QuickScan/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-QuickScan-QuickScanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickScan-QuickScanTests.release.xcconfig"; path = "Target Support Files/Pods-QuickScan-QuickScanTests/Pods-QuickScan-QuickScanTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		D154AD8E66CC431BA8400660 /* JustMeAgainDownHere-Regular.ttf */ = {isa = PBXFileReference; name = "JustMeAgainDownHere-Regular.ttf"; path = "../assets/fonts/JustMeAgainDownHere-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8AA0B0EDABD54B9F82734FAC /* AbrilFatface-Regular.ttf */ = {isa = PBXFileReference; name = "AbrilFatface-Regular.ttf"; path = "../assets/fonts/AbrilFatface-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8D2424AB97794D1690B2BFB7 /* Jura-Light.ttf */ = {isa = PBXFileReference; name = "Jura-Light.ttf"; path = "../assets/fonts/Jura-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CD6BC264EB174E2F89A386E7 /* Jura-Regular.ttf */ = {isa = PBXFileReference; name = "Jura-Regular.ttf"; path = "../assets/fonts/Jura-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +130,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				CD19D3D61DE74AD98850955A /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -147,6 +156,18 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		CD19D3D61DE74AD98850955A /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				D154AD8E66CC431BA8400660 /* JustMeAgainDownHere-Regular.ttf */,
+				8AA0B0EDABD54B9F82734FAC /* AbrilFatface-Regular.ttf */,
+				8D2424AB97794D1690B2BFB7 /* Jura-Light.ttf */,
+				CD6BC264EB174E2F89A386E7 /* Jura-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -243,6 +264,10 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				B83E4085986B47AABFC24F0B /* JustMeAgainDownHere-Regular.ttf in Resources */,
+				51FE80AB5B72446E9B06F35C /* AbrilFatface-Regular.ttf in Resources */,
+				0B48076B9076443592083997 /* Jura-Light.ttf in Resources */,
+				2C4EAC6DE2BE4BFC951F4498 /* Jura-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

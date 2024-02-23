@@ -1,118 +1,94 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import * as React from 'react';
+import {View, Text} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import Onboarding from './screens/Onboarding';
+import Welcome from './screens/WelcomeScreen';
+import StudentDashboard from './screens/StudentDashboard';
+import TeacherDashboard from './screens/TeacherDashboard';
+import CreateClass from './screens/CreateClass';
+import Header from './components/Header';
+import ClassScreen from './screens/ClassScreen';
+import AttendenceScreen from './screens/AttendenceScreen';
+import QRScanScreen from './screens/QRScanScreen';
+import JoinClass from './screens/JoinClass';
 
-import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
-
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+function HomeScreen() {
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
+    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+      <Text>Home Screen</Text>
     </View>
   );
 }
 
-function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+const Stack = createNativeStackNavigator();
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
+function App() {
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Onboarding"
+          component={Onboarding}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="teacher"
+          component={TeacherDashboard}
+          options={({navigation}) => ({
+            header: () => <Header navigation={navigation} />,
+          })}
+        />
+        <Stack.Screen
+          name="student"
+          component={StudentDashboard}
+          options={({navigation}) => ({
+            header: () => <Header navigation={navigation} />,
+          })}
+        />
+        <Stack.Screen
+          name="Welcome"
+          component={Welcome}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="CreateClass"
+          component={CreateClass}
+          options={({navigation}) => ({
+            header: () => <Header navigation={navigation} />,
+          })}
+        />
+        <Stack.Screen
+          name="JoinClass"
+          component={JoinClass}
+          options={({navigation}) => ({
+            header: () => <Header navigation={navigation} />,
+          })}
+        />
+        <Stack.Screen
+          name="Class"
+          component={ClassScreen}
+          options={({navigation}) => ({
+            header: () => <Header navigation={navigation} />,
+          })}
+        />
+        <Stack.Screen
+          name="Attendence"
+          component={AttendenceScreen}
+          options={({navigation}) => ({
+            header: () => <Header navigation={navigation} />,
+          })}
+        />
+        <Stack.Screen
+          name="QRScan"
+          component={QRScanScreen}
+          options={({navigation}) => ({
+            header: () => <Header navigation={navigation} />,
+          })}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
 
 export default App;
