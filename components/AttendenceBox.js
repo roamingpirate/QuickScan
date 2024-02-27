@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react';
-import {Text, View, StyleSheet, Image} from 'react-native';
+import React from 'react';
+import {Text, View, StyleSheet} from 'react-native';
 
 const Line = () => {
   return (
@@ -27,14 +27,14 @@ const Data = ({count, text}) => {
   );
 };
 
-const AttendenceBox = ({present, absent, total}) => {
+const AttendenceBox = ({present, total}) => {
   return (
     <View style={styles.container}>
-      <Data count="65" text="Present" />
+      <Data count={present} text="Present" />
       <Line />
-      <Data count="30" text="Absent" />
+      <Data count={total-present} text="Absent" />
       <Line />
-      <Data count="95" text="total" />
+      <Data count={total} text="Total" />
     </View>
   );
 };
