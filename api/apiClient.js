@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {getTokenFromStorage} from '../Utils/TokenStorage';
 
-const API_ENDPOINT = 'http://localhost:8080';
+const API_ENDPOINT = 'http://192.168.205.237:8080/';
 const getapiClient = async () => {
   let token = '';
   token = await getTokenFromStorage();

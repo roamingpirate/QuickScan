@@ -109,6 +109,7 @@ const SignIn = ({onSwitchForm, navigation}) => {
       />
     </View>
   );
+  
 };
 
 const SignUp = ({onSwitchForm, navigation}) => {

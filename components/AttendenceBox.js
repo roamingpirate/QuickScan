@@ -30,11 +30,11 @@ const Data = ({count, text}) => {
 const AttendenceBox = ({present, absent, total}) => {
   return (
     <View style={styles.container}>
-      <Data count="65" text="Present" />
+      <Data count={present} text="Present" />
       <Line />
-      <Data count="30" text="Absent" />
+      <Data count={total - present} text="Absent" />
       <Line />
-      <Data count="95" text="total" />
+      <Data count={total} text="Total" />
     </View>
   );
 };

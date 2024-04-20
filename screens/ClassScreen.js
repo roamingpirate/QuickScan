@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   StyleSheet,
   Text,
@@ -28,10 +28,54 @@ const ClassScreen = ({route, navigation}) => {
   const classCode = route.params.classCode;
   const subject = route.params.subject;
   const classID = route.params.classID;
-  const [selectedDate, setSelectedDate] = useState('');
+  const [selectedDate, setSelectedDate] = useState(
+    new Date().toISOString().split('T')[0],
+  );
   const [isARView, setIsARView] = useState(true);
+  const tableHeaders = ['Roll No', 'Name', 'InstituteID'];
 
   const ARView = () => {
+    const ModifiedDate = date => {
+      const month = [
+        '',
+        'January',
+        'Feburay',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December',
+      ];
+      const [Y, M, D] = date.split('-');
+
+      return D + ' ' + month[parseInt(M)] + ' ' + Y;
+    };
+    const [present, setPresent] = useState(0);
+    const [total, setTotal] = useState(0);
+
+    useEffect(() => {
+      const fetchData = async () => {
+        const apiClient = await getapiClient();
+        let t = (
+          await apiClient.get(`/attendence/getClassTotalStudent/${classID}`)
+        ).data;
+        let p = (
+          await apiClient.get(
+            `/attendence/getClassPresentStudent/${classID}?date=${selectedDate}`,
+          )
+        ).data;
+        console.log('baba ' + selectedDate + ' ' + p);
+        setPresent(parseInt(p));
+        setTotal(parseInt(t));
+      };
+      fetchData();
+    }, [selectedDate]);
+
     return (
       <View>
         <Text style={{fontSize: 30, color: 'black', marginTop: 15}}>
@@ -44,25 +88,22 @@ const ClassScreen = ({route, navigation}) => {
             borderWidth: 0.5,
             borderColor: 'grey',
           }}
+          current={selectedDate} // Set the current visible month based on selectedDate
+          onDayPress={day => {
+            setSelectedDate(day.dateString);
+          }}
           markedDates={{
-            [selectedDate]: {selected: true, selectedColor: 'blue'},
+            [selectedDate]: {selected: true, selectedColor: '#2D9DAC'},
           }}
         />
         <Text style={{fontSize: 20, color: 'black', marginTop: 15}}>
-          16 Feburary 2024
+          {ModifiedDate(selectedDate)}
         </Text>
-        <AttendenceBox />
+        <AttendenceBox present={present} total={total} />
         <Btn text="View Record" />
       </View>
     );
   };
-
-  const tableHeaders = ['Roll No', 'Name', 'InstituteID'];
-  const tableData = [
-    ['1', 'Anshika', '20103024'],
-    ['4', 'Vaskar', '20101982'],
-    ['7', 'Divyansh', '20103029'],
-  ];
 
   const StudentListView = () => {
     return (
